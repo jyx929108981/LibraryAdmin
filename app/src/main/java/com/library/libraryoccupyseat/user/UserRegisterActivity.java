@@ -19,8 +19,6 @@ import android.widget.Toast;
 
 import com.library.libraryoccupyseat.R;
 import com.library.libraryoccupyseat.base.BaseActivity;
-import com.library.libraryoccupyseat.bean.DreamUser;
-import com.library.libraryoccupyseat.utils.Md5Utils;
 
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
@@ -82,14 +80,14 @@ public class UserRegisterActivity extends BaseActivity {
                     if (!TextUtils.isEmpty(user_password)) {
                         if (!TextUtils.isEmpty(user_repeat_password)) {
                             if (user_password.equals(user_repeat_password)) {
-                                user_password = Md5Utils.md5(user_password);
+
                                 BmobUser bu = new BmobUser();
                                 bu.setUsername(user_name);
                                 bu.setPassword(user_password);
                                 //注意：不能用save方法进行注册
-                                bu.signUp(new SaveListener<DreamUser>() {
+                                bu.signUp(new SaveListener<BmobUser>() {
                                     @Override
-                                    public void done(DreamUser s, BmobException e) {
+                                    public void done(BmobUser s, BmobException e) {
                                         if (e == null) {
                                             Toast.makeText(getSelfActivity(), "注册成功", Toast.LENGTH_SHORT).show();
                                             animateRevealClose();

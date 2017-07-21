@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="admin_main_tab_name">
+        <item>设置</item>
+        <item>管理</item>
+        <!-- <item>圈子</item> -->
+        <item>自己</item>
+    </string-array>
+
+    <string-array name="main_tab_name">
+        <item>设置</item>
+        <item>管理</item>
+        <!-- <item>圈子</item> -->
+        <item>自己</item>
+    </string-array>
+</resources>

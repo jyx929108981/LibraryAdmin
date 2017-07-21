@@ -15,10 +15,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.library.libraryoccupyseat.admin.AdminMainActivity;
-import com.library.libraryoccupyseat.student.MainActivity;
 import com.library.libraryoccupyseat.R;
+import com.library.libraryoccupyseat.admin.AdminMainActivity;
 import com.library.libraryoccupyseat.base.BaseActivity;
+import com.library.libraryoccupyseat.student.MainActivity;
 import com.library.libraryoccupyseat.utils.Md5Utils;
 
 import cn.bmob.v3.BmobUser;
@@ -121,12 +121,15 @@ public class UserLoginActivity extends BaseActivity {
                     strUserPassword = etPassword.getText().toString();
                     if (!TextUtils.isEmpty(strUserName)) {
                         if (!TextUtils.isEmpty(strUserPassword)) {
-                            strUserPassword = Md5Utils.md5(strUserPassword);
+                            if (userType == 0){
+                                strUserPassword = Md5Utils.md5(strUserPassword);//管理员账户密码用md5加密用来区分
+                            }else{
+
+                            }
                             BmobUser bu2 = new BmobUser();
                             bu2.setUsername(strUserName);
                             bu2.setPassword(strUserPassword);
                             bu2.login(new SaveListener<BmobUser>() {
-
                                 @Override
                                 public void done(BmobUser bmobUser, BmobException e) {
                                     if(e==null){

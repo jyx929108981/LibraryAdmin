@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:background="@drawable/home_bottom_menu_bg"
+              android:gravity="center"
+              android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/view_gray"/>
+
+    <RelativeLayout
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+        <ImageView
+            android:id="@+id/imageview"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:focusable="false"/>
+
+
+        <TextView
+            android:id="@+id/msg_count"
+            android:layout_width="10dip"
+            android:layout_height="10dip"
+            android:layout_alignTop="@+id/imageview"
+            android:layout_marginLeft="-5dip"
+            android:layout_toRightOf="@+id/imageview"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:textColor="@color/home_menu_text_select_color"
+        android:textSize="12dip">
+    </TextView>
+
+</LinearLayout>

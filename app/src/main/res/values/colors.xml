@@ -11,4 +11,15 @@
     <color name="blue">#00f</color>
     <color name="_00ccff">#00ccff</color>
     <color name="green">#0f0</color>
+    <color name="view_gray">#c9c6c0</color>
+
+    <!--showporgress-->
+    <color name="progress_blue">#00b2ff</color>
+    <color name="progress_yellow">#fffb00</color>
+    <color name="progress_red">#ff0048</color>
+
+    <color name="menu_text_color_gray">#666666</color>
+    <color name="menu_text_color_red">#f51f58</color>
+
+
 </resources>
