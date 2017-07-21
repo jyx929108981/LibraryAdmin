@@ -11,6 +11,15 @@ public class StudentUser extends BmobObject {
 
     private String userName;
     private String userPassword;
+    private int type;
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
 
     public String getUserName() {
         return userName;

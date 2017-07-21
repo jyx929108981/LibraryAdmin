@@ -21,7 +21,7 @@ import com.library.libraryoccupyseat.base.BaseFragmentActivity;
 public class AdminMainActivity extends BaseFragmentActivity implements ViewPager.OnPageChangeListener {
 
     //定义数组来存放Fragment界面
-    private Class<?>[] fragmentArray = {ManageFragment.class, SetFragment.class, SelfFragment.class};
+    private Class<?>[] fragmentArray = { SetFragment.class,ManageFragment.class, SelfFragment.class};
 
     //Tab选项卡的文字
     private String[] mTextviewArray;

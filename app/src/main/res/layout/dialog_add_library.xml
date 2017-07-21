@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        app:cardBackgroundColor="@color/_00ccff"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="3dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="30dp"
+                android:text="Library名称:"
+                android:textColor="@color/black"
+                android:textSize="18sp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/_00ccff"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:lines="1"
+                android:singleLine="true"
+                android:hint="请输入Library名称"
+                android:textColor="@color/_00ccff"
+                android:textSize="18sp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/_00ccff"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="30dp"
+                android:text="Library楼层:"
+                android:textColor="@color/black"
+                android:textSize="20sp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/_00ccff"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:lines="1"
+                android:singleLine="true"
+                android:hint="请输入Library名称"
+                android:textColor="@color/_00ccff"
+                android:textSize="18sp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/_00ccff"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="30dp"
+                android:text="Library宽度"
+                android:textColor="@color/black"
+                android:textSize="18sp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/_00ccff"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:lines="1"
+                android:singleLine="true"
+                android:hint="请输入Library名称"
+                android:textColor="@color/_00ccff"
+                android:textSize="18sp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/_00ccff"/>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

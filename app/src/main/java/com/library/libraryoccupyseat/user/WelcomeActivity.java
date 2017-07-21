@@ -5,12 +5,14 @@ import android.content.SharedPreferences;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Toast;
 
 import com.library.libraryoccupyseat.R;
 import com.library.libraryoccupyseat.base.BaseActivity;
 import com.library.libraryoccupyseat.utils.sharedprederence.SharedPreferenceCode;
 
 import cn.bmob.v3.Bmob;
+import cn.bmob.v3.BmobUser;
 
 /**
  * @author jyx
@@ -73,6 +75,23 @@ public class WelcomeActivity extends BaseActivity {
                 getSelfActivity().finish();
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getCurrentUserData();
+    }
+
+    private void getCurrentUserData() {
+        BmobUser bmobUser = BmobUser.getCurrentUser();
+        if(bmobUser != null){
+            // 允许用户使用应用
+            Toast.makeText(this, "不为空", Toast.LENGTH_SHORT).show();
+        }else{
+            //缓存用户对象为空时， 可打开用户注册界面…
+            Toast.makeText(this, "空", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
