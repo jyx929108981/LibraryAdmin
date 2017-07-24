@@ -9,7 +9,6 @@ import cn.bmob.v3.BmobObject;
 public class AdminSetBean extends BmobObject {
 
     private String libraryName;
-    private String libraryNumber;
     private String libraryFloor;
     private String libraryWidth;
 
@@ -23,14 +22,6 @@ public class AdminSetBean extends BmobObject {
 
     public void setLibraryName(String libraryName) {
         this.libraryName = libraryName;
-    }
-
-    public String getLibraryNumber() {
-        return libraryNumber;
-    }
-
-    public void setLibraryNumber(String libraryNumber) {
-        this.libraryNumber = libraryNumber;
     }
 
     public String getLibraryFloor() {

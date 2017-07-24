@@ -21,92 +21,115 @@
             android:layout_height="wrap_content"
             android:layout_margin="1dp"
             android:background="@color/white"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:gravity="center_vertical"
-                android:paddingLeft="30dp"
-                android:text="Library名称:"
-                android:textColor="@color/black"
-                android:textSize="18sp"/>
+                android:layout_height="50dp"
+                android:textColor="@color/_00ccff"
+                android:textSize="20dp"
+                android:text="设置Library信息"
+                android:gravity="center"/>
 
-            <View
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/_00ccff"/>
+                android:layout_height="60dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="20dp"
+                android:textColorHint="#c5c5c5">
 
-            <EditText
+                <EditText
+                    android:id="@+id/dialog_library_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/selector_bg_edit"
+                    android:hint="Library名称："
+                    android:inputType="textPersonName"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/_00ccff"
+                    android:textCursorDrawable="@drawable/bg_input_cursor"
+                    android:textSize="18sp"
+                    />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="5dp"
+                android:textColorHint="#c5c5c5">
+
+                <EditText
+                    android:id="@+id/dialog_library_floor"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/selector_bg_edit"
+                    android:hint="Library楼层："
+                    android:inputType="number"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/_00ccff"
+                    android:textCursorDrawable="@drawable/bg_input_cursor"
+                    android:textSize="18sp"
+                    />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="5dp"
+                android:textColorHint="#c5c5c5">
+
+                <EditText
+                    android:id="@+id/dialog_library_width"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/selector_bg_edit"
+                    android:hint="Library宽度："
+                    android:inputType="number"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/_00ccff"
+                    android:textCursorDrawable="@drawable/bg_input_cursor"
+                    android:textSize="18sp"
+                    />
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:ellipsize="end"
-                android:gravity="center"
-                android:lines="1"
-                android:singleLine="true"
-                android:hint="请输入Library名称"
-                android:textColor="@color/_00ccff"
-                android:textSize="18sp"/>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/_00ccff"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:gravity="center_vertical"
-                android:paddingLeft="30dp"
-                android:text="Library楼层:"
-                android:textColor="@color/black"
-                android:textSize="20sp"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/_00ccff"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:ellipsize="end"
-                android:gravity="center"
-                android:lines="1"
-                android:singleLine="true"
-                android:hint="请输入Library名称"
-                android:textColor="@color/_00ccff"
-                android:textSize="18sp"/>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/_00ccff"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:gravity="center_vertical"
-                android:paddingLeft="30dp"
-                android:text="Library宽度"
-                android:textColor="@color/black"
-                android:textSize="18sp"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/_00ccff"/>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:ellipsize="end"
-                android:gravity="center"
-                android:lines="1"
-                android:singleLine="true"
-                android:hint="请输入Library名称"
-                android:textColor="@color/_00ccff"
-                android:textSize="18sp"/>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/_00ccff"/>
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="4dp">
+                <Button
+                    android:id="@+id/dialog_btn_cancel"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="40dp"
+                    android:background="@drawable/bt_shape"
+                    android:stateListAnimator="@drawable/state_list_animator_z"
+                    android:text="取消"
+                    android:textColor="@color/_00ccff"
+                    android:layout_marginRight="5dp"
+                    >
+                </Button>
+                <Button
+                    android:id="@+id/dialog_btn_affirm"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="40dp"
+                    android:background="@drawable/bt_shape"
+                    android:stateListAnimator="@drawable/state_list_animator_z"
+                    android:text="@string/go"
+                    android:textColor="@color/_00ccff"
+                    android:layout_marginLeft="5dp"
+                    >
+                </Button>
+            </LinearLayout>
         </LinearLayout>
     </android.support.v7.widget.CardView>
 </RelativeLayout>

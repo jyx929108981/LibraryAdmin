@@ -64,6 +64,7 @@ public class SetFragment extends BaseFragment {
             @Override
             public void onClicklistener(View view, int position) {
                 AddLibraryDialog dialog = new AddLibraryDialog(getSelfActivity());
+
             }
         });
     }
