@@ -1,11 +1,11 @@
 package com.library.libraryoccupyseat.admin.set.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 import com.library.libraryoccupyseat.R;
 import com.library.libraryoccupyseat.bean.AdminSetBean;
@@ -44,33 +44,32 @@ public class AdminSetGridViewAdapter extends BaseAdapter {
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
 
-        if (position == 0){
-            View view  = LayoutInflater.from(context).inflate(R.layout.frag_admin_set_add_item,null);
-            CardView add_item_cardView = (CardView) view.findViewById(R.id.add_item_cardView);
-            add_item_cardView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (mAddLibrary!=null){
-                        mAddLibrary.onClicklistener(v,position);
-                    }
-                }
-            });
-            return view;
-        }else{
             ViewHolder viewHolder;
             if (convertView ==null){
                 viewHolder = new ViewHolder();
                 convertView = LayoutInflater.from(context).inflate(R.layout.frag_admin_set_new_item,null);
+                viewHolder.item_library_name = (TextView) convertView.findViewById(R.id.item_library_name);
+                viewHolder.item_library_floor = (TextView) convertView.findViewById(R.id.item_library_floor);
+                viewHolder.item_library_width = (TextView) convertView.findViewById(R.id.item_library_width);
                 convertView.setTag(viewHolder);
             }else{
                 viewHolder = (ViewHolder) convertView.getTag();
             }
-        }
-        return convertView;
+
+            AdminSetBean adminSetBean = mList.get(position);
+            if (adminSetBean!= null){
+                viewHolder.item_library_name.setText(adminSetBean.getLibraryName());
+                viewHolder.item_library_floor.setText("楼层:"+adminSetBean.getLibraryFloor());
+                viewHolder.item_library_width.setText("宽度:"+adminSetBean.getLibraryWidth());
+            }
+            return convertView;
+
     }
 
     class ViewHolder{
-
+        private TextView item_library_name;
+        private TextView item_library_floor;
+        private TextView item_library_width;
     }
 
     public interface addLibrary{

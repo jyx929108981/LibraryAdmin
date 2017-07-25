@@ -3,11 +3,13 @@ package com.library.libraryoccupyseat.widget;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.library.libraryoccupyseat.R;
 import com.library.libraryoccupyseat.bean.AdminSetBean;
@@ -46,7 +48,7 @@ public class AddLibraryDialog {
         dialog_btn_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (onCancelListener!= null){
+                if (onCancelListener != null) {
                     onCancelListener.ClickListener(v);
                 }
             }
@@ -55,7 +57,7 @@ public class AddLibraryDialog {
         dialog_btn_affirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (onPositiveListener!= null){
+                if (onPositiveListener != null) {
                     onPositiveListener.ClickListener(v);
                 }
             }
@@ -73,14 +75,31 @@ public class AddLibraryDialog {
         dialog_btn_affirm = (Button) view.findViewById(R.id.dialog_btn_affirm);
     }
 
-    public AdminSetBean getLibraryInfo(){
+    public AdminSetBean getLibraryInfo() {
         AdminSetBean adminSetBean = new AdminSetBean();
+        String libraryName = dialog_library_name.getText().toString();
+        int libraryFloor = 0;
+        if (!TextUtils.isEmpty(dialog_library_floor.getText().toString())){
+            libraryFloor = Integer.valueOf(dialog_library_floor.getText().toString());
+        }
+        int libraryWidth = 0;
 
+        if (!TextUtils.isEmpty(dialog_library_width.getText().toString())){
+            libraryWidth = Integer.valueOf(dialog_library_width.getText().toString());
+        }
+
+        if (!TextUtils.isEmpty(libraryName) && libraryFloor!=0 && libraryWidth !=0) {
+            adminSetBean.setLibraryName(libraryName);
+            adminSetBean.setLibraryFloor(libraryFloor);
+            adminSetBean.setLibraryWidth(libraryWidth);
+        }else{
+            Toast.makeText(context, "请填写正确的信息", Toast.LENGTH_SHORT).show();
+        }
         return adminSetBean;
     }
 
 
-    public interface OnCancelListener{
+    public interface OnCancelListener {
         void ClickListener(View view);
     }
 
@@ -88,11 +107,15 @@ public class AddLibraryDialog {
         this.onCancelListener = onCancelListener;
     }
 
-    public interface OnPositiveListener{
+    public interface OnPositiveListener {
         void ClickListener(View view);
     }
 
     public void setOnPositiveListener(OnPositiveListener onPositiveListener) {
         this.onPositiveListener = onPositiveListener;
+    }
+
+    public void dismiss(){
+        mAlertDialog.dismiss();
     }
 }

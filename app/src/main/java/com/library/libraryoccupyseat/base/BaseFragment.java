@@ -83,7 +83,7 @@ public class BaseFragment extends Fragment {
 //        MyToast.getInstence().showInfoToast(content);
     }
 
-    protected void startActivityForNoIntent(Class forwordClass) {
+    public void startActivityForNoIntent(Class forwordClass) {
         Intent intent = new Intent(getSelfActivity(), forwordClass);
         startActivity(intent);
         getActivity().overridePendingTransition(R.anim.right_in, R.anim.right_out);

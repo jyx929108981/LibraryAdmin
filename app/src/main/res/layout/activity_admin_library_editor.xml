@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_admin_library_editor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.library.libraryoccupyseat.admin.set.AdminLibraryEditorActivity">
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        layout="@layout/app_title"
+        android:id="@+id/title_layout"/>
+    <GridView
+        android:id="@+id/admin_library_gridView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/title_layout"></GridView>
+</RelativeLayout>
