@@ -19,6 +19,7 @@ public class AdminLibraryEditorAdapter extends BaseAdapter {
     public AdminLibraryEditorAdapter(Context context, AdminSetBean adminSetBean) {
         this.context = context;
         mAdminSetBean = adminSetBean;
+
     }
 
     @Override
